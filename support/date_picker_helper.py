@@ -24,6 +24,6 @@ class DatePickerLocators():
     def get_day_button(date):
         day = DatePickerLocators.__set_day(date)
         DEPART_DAY_BUTTON = (By.XPATH,
-        f"//calendar[@class='datepicker__calendar datepicker__calendar--left']//"
-        f"div[@data-value='{day}' and @data-type='day']")
+                             f"//calendar[@class='datepicker__calendar datepicker__calendar--left']//"
+                             f"div[@data-value='{day}' and @data-type='day']")
         return DEPART_DAY_BUTTON

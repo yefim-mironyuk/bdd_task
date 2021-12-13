@@ -2,10 +2,12 @@ from loguru import logger
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from github_task.pages.base_page import BasePage
 
 
-class FindElement(BasePage):
+class FindElement:
+    def __init__(self, browser):
+        self.browser = browser
+
     def find_visible_element(self, how, what):
         logger.debug(f'Trying to find visible element "{how}", "{what}"...')
         try:
@@ -25,7 +27,10 @@ class FindElement(BasePage):
         return element
 
 
-class ElementStatements(BasePage):
+class ElementStatements:
+    def __init__(self, browser):
+        self.browser = browser
+
     def is_element_present(self, how, what):
         logger.info(f'Trying to find element "{how}", "{what}"...')
         try:
