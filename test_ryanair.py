@@ -17,9 +17,9 @@ def setup(browser):
     main_page.accept_cookies()
 
 
-@given("Ryanair home page is displayed", target_fixture="home_page")
+@given("Ryanair home page is displayed", target_fixture="go_to_home_page")
 def go_to_home_page(setup, browser):
-    pass
+    pass 
 
 
 @when(parsers.cfparse(
